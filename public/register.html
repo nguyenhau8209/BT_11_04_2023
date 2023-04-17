@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- //npx tailwindcss -i ./src/tailwind.css -o ./public/css/tailwind.css --watch -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
+    <style>
+        .poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="poppins">
+    <section class="w-[1440px] h-[900px]">
+        <div class="grid grid-cols-2">
+            <div>
+                <div>
+                    <img src="./icons/logo.svg" alt="" srcset="" class="w-[76px] h-[66px] mt-[21px] ml-[23px]">
+                </div>
+                <div class="mt-[63px] ml-[122px] w-[431px] h-[636px] mb-[114.88px]">
+                    <h2 class="text-[30px] font-medium">Sign up</h2>
+                    <span class="text-base font-regular mt-[22px]">
+                        If you already have an account register
+                    </span>
+                    <br>
+                    <span>
+                        You can <a href="http://127.0.0.1:5500/public/login.html" class="text-[#0C21C1]">Login here !</a>
+                    </span>
+                    <div class="mt-[27px]">
+                        <form action="#">
+                            <div class="border-b-2 border-[#000842]">
+                                <label for="" class="font-medium text-[13px]">Email</label>
+                                <div class="flex flex-row mb-[7px]">
+                                    <img src="./icons/message.svg" alt="">
+                                    <input type="text" placeholder="Enter your email address"
+                                        class="ml-[10px] font-regular">
+                                </div>
+                            </div>
+
+                            <div class="border-b-2 border-[#000842] mt-3">
+                                <label for="" class="font-medium text-[13px]">Username</label>
+                                <div class="flex flex-row mb-[7px]">
+                                    <img src="./icons/user1.svg" alt="">
+                                    <input type="text" placeholder="Enter your User name"
+                                        class="ml-[10px] font-regular">
+                                </div>
+                            </div>
+
+                            <div class="border-b-2 border-[#000842] mt-3">
+                                <label for="" class="font-medium text-[13px]">Planet</label>
+                                <div class="flex flex-row">
+                                    <div>
+                                        <input type="radio" id="male" name="drone" value="male" checked>
+                                        <label for="male">Male</label>
+                                    </div>
+
+                                    <div class="ml-[18px]">
+                                        <input type="radio" id="female" name="drone" value="female">
+                                        <label for="female">Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b-2 border-[#000842] mt-3">
+                                <label for="" class="font-medium text-[13px]">Password</label>
+                                <div class="flex flex-row mb-[7px]">
+                                    <img src="./icons/pass.svg" alt="">
+                                    <input type="password" placeholder="Enter your Password"
+                                        class="ml-[10px] font-regular">
+                                </div>
+                            </div>
+
+                            <div class="border-b-2 border-[#000842] mt-3">
+                                <label for="" class="font-medium text-[13px]">Confrim Password</label>
+                                <div class="flex flex-row mb-[7px]">
+                                    <img src="./icons/pass.svg" alt="">
+                                    <input type="password" placeholder="Confrim your Password"
+                                        class="ml-[10px] font-regular">
+                                </div>
+                            </div>
+
+                            <div class="border-b-2 border-[#000842] mt-3">
+                                <label for="" class="font-medium text-[13px]">Date of birth</label>
+                                <div class="flex flex-row mb-[7px]">
+                                    <input type="date" placeholder="dd/mm/yyyy" class="font-regular text-[#999999]" >
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="" class="font-medium text-[13px]">Avatar</label>
+                                <div class="flex flex-row">
+                                    <img src="./icons/camera.svg" alt="">
+                                    <img src="./icons/avatar.svg" alt="" class="ml-[71px]">
+                                </div>
+                            </div>
+
+                            <button
+                                class="mt-[31px] py-[14px] px-[191px] bg-[#0C21C1] rounded-[32px] text-[17px] font-medium text-white">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="bg-[#000842] w-[735px] h-[859px] rounded-[15px] absolute top-[20px] right-[32px]">
+                    <div class="pt-[24px] mr-[32px]">
+                        <div class="flex flex-row justify-end">
+                            <img src="./icons/phone.svg" alt="">
+                            <span class="text-white text-[15px] font-regular">+94 0116 789 754</span>
+                        </div>
+                    </div>
+                    <div class="mt-[17px] w-[546px] h-[699px] mx-[91px] mb-[96px]">
+                        <img src="./images/anhnen.png" alt="" class="w-[521px] h-[521px] ">
+                        <div class="mt-[84px]">
+                            <h2 class="text-white font-semibold text-[40px]">Sign Up to name</h2>
+                            <span class="text-white font-light text-[20px]">Lorem Ipsum is simply </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

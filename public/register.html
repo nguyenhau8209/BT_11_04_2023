@@ -34,7 +34,8 @@
                     </span>
                     <br>
                     <span>
-                        You can <a href="http://127.0.0.1:5500/public/login.html" class="text-[#0C21C1]">Login here !</a>
+                        You can <a href="http://127.0.0.1:5500/public/login.html" class="text-[#0C21C1]">Login here
+                            !</a>
                     </span>
                     <div class="mt-[27px]">
                         <form action="#">
@@ -43,7 +44,7 @@
                                 <div class="flex flex-row mb-[7px]">
                                     <img src="./icons/message.svg" alt="">
                                     <input type="text" placeholder="Enter your email address"
-                                        class="ml-[10px] font-regular">
+                                        class="ml-[10px] font-regular" name="email" id="email">
                                 </div>
                             </div>
 
@@ -51,8 +52,8 @@
                                 <label for="" class="font-medium text-[13px]">Username</label>
                                 <div class="flex flex-row mb-[7px]">
                                     <img src="./icons/user1.svg" alt="">
-                                    <input type="text" placeholder="Enter your User name"
-                                        class="ml-[10px] font-regular">
+                                    <input type="text" placeholder="Enter your User name" class="ml-[10px] font-regular"
+                                        name="username" id="username">
                                 </div>
                             </div>
 
@@ -60,12 +61,12 @@
                                 <label for="" class="font-medium text-[13px]">Planet</label>
                                 <div class="flex flex-row">
                                     <div>
-                                        <input type="radio" id="male" name="drone" value="male" checked>
+                                        <input type="radio" id="male" name="sex" value="male" checked>
                                         <label for="male">Male</label>
                                     </div>
 
                                     <div class="ml-[18px]">
-                                        <input type="radio" id="female" name="drone" value="female">
+                                        <input type="radio" id="female" name="sex" value="female">
                                         <label for="female">Female</label>
                                     </div>
                                 </div>
@@ -75,7 +76,7 @@
                                 <div class="flex flex-row mb-[7px]">
                                     <img src="./icons/pass.svg" alt="">
                                     <input type="password" placeholder="Enter your Password"
-                                        class="ml-[10px] font-regular">
+                                        class="ml-[10px] font-regular" name="password" id="password">
                                 </div>
                             </div>
 
@@ -84,14 +85,15 @@
                                 <div class="flex flex-row mb-[7px]">
                                     <img src="./icons/pass.svg" alt="">
                                     <input type="password" placeholder="Confrim your Password"
-                                        class="ml-[10px] font-regular">
+                                        class="ml-[10px] font-regular" name="repassword" id="repassword">
                                 </div>
                             </div>
 
                             <div class="border-b-2 border-[#000842] mt-3">
                                 <label for="" class="font-medium text-[13px]">Date of birth</label>
                                 <div class="flex flex-row mb-[7px]">
-                                    <input type="date" placeholder="dd/mm/yyyy" class="font-regular text-[#999999]" >
+                                    <input type="number" placeholder="dd/mm/yyyy" class="font-regular text-[#999999]"
+                                        name="dOB" id="dob">
                                 </div>
                             </div>
 
@@ -104,7 +106,8 @@
                             </div>
 
                             <button
-                                class="mt-[31px] py-[14px] px-[191px] bg-[#0C21C1] rounded-[32px] text-[17px] font-medium text-white">Register</button>
+                                class="mt-[31px] py-[14px] px-[191px] bg-[#0C21C1] rounded-[32px] text-[17px] font-medium text-white"
+                                id="register-button">Register</button>
                         </form>
                     </div>
                 </div>
@@ -128,6 +131,45 @@
             </div>
         </div>
     </section>
+
+    <!-- 
+    // username: "hau123",
+            // password: "123",
+            // sex: "male",
+            // dOB: 13214324234,
+            // email: "conghaunguyen909@gmail.com", -->
+    <script>
+
+        async function postJSON(data) {
+            try {
+                const response = await fetch("http://3.95.239.60:9001/api/auth/sign-in", {
+                    method: "POST", // or 'PUT'
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+                console.log("Success:", result);
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
+        const registerButton = document.getElementById("register-button");
+        registerButton.addEventListener("click", function () {
+            const data = {
+                username: document.querySelector('input[name="username"]').value,
+                email: document.querySelector('input[name="email"]').value,
+                sex: document.querySelector('input[name="sex"]').value,
+                password: document.querySelector('input[name="password"]').value,
+                repassword: document.querySelector('input[name="repassword"]').value,
+                dOB: document.querySelector('input[name="dOB"]').value,
+            };
+            postJSON(data);
+        });
+    </script>
 </body>
 
 </html>

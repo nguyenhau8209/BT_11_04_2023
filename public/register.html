@@ -66,71 +66,77 @@
                     </span>
                     <div class="mt-[27px]">
                         <form id="form" action="#">
-                            <div class="border-b-2 border-[#000842] ">
+                            <div class="border-b-2 border-[#000842] divEmail ">
                                 <label for="" class="font-medium text-[13px]">Email</label>
-                                <div class="flex flex-row mb-[7px] divEmail">
+                                <div class="flex flex-row mb-[7px] ">
                                     <img src="./icons/message.svg" alt="">
                                     <input type="text" placeholder="Enter your email address"
                                         class="ml-[10px] font-regular" name="email" id="email" required="true"
                                         isEmail='true'>
-                                    <p id="errorEmail" class="text-[8px]" style="color: red"></p>
+
                                 </div>
+                                <p id="errorEmail" class="text-[8px]" style="color: red"></p>
                             </div>
 
-                            <div class="border-b-2 border-[#000842] mt-3 ">
+                            <div class="border-b-2 border-[#000842] mt-3 divUserName">
                                 <label for="" class="font-medium text-[13px]">Username</label>
-                                <div class="flex flex-row mb-[7px] divUserName">
+                                <div class="flex flex-row mb-[7px] ">
                                     <img src="./icons/user1.svg" alt="">
                                     <input type="text" placeholder="Enter your User name" class="ml-[10px] font-regular"
                                         name="username" id="username" required="true" minlength="6" maxlength2="12">
-                                    <p id="errorUserName" style="color: red"></p>
+
                                 </div>
+                                <p id="errorUserName" style="color: red"></p>
                             </div>
 
-                            <div class="border-b-2 border-[#000842] mt-3">
+                            <div class="border-b-2 border-[#000842] mt-3 divSex">
                                 <label for="" class="font-medium text-[13px]">Planet</label>
                                 <div class="flex flex-row ">
-                                    <div class="divSex">
+                                    <div class="">
                                         <input type="radio" id="male" name="sex" value="male" option="true" checked>
                                         <label for="male">Male</label>
                                     </div>
 
-                                    <div class="ml-[18px] divSex">
+                                    <div class="ml-[18px] ">
                                         <input type="radio" id="female" name="sex" value="female" option="true">
                                         <label for="female">Female</label>
                                     </div>
-                                    <p id="errorSex" style="color: red"></p>
+
                                 </div>
+                                <p id="errorSex" style="color: red"></p>
                             </div>
-                            <div class="border-b-2 border-[#000842] mt-3 ">
+                            <div class="border-b-2 border-[#000842] mt-3 divPassword">
                                 <label for="" class="font-medium text-[13px]">Password</label>
-                                <div class="flex flex-row mb-[7px] divPassword">
+                                <div class="flex flex-row mb-[7px] ">
                                     <img src="./icons/pass.svg" alt="">
                                     <input type="password" placeholder="Enter your Password"
                                         class="ml-[10px] font-regular" name="password" id="password" required="true"
                                         hasOneUpperCase="1" minlength="8">
-                                    <p id="errorPassword" style="color: red"></p>
+
                                 </div>
+                                <p id="errorPassword" style="color: red"></p>
                             </div>
 
-                            <div class="border-b-2 border-[#000842] mt-3">
+                            <div class="border-b-2 border-[#000842] mt-3 divRePassword">
                                 <label for="" class="font-medium text-[13px]">Confrim Password</label>
-                                <div class="flex flex-row mb-[7px] divRePassword">
+                                <div class="flex flex-row mb-[7px] ">
                                     <img src="./icons/pass.svg" alt="">
                                     <input type="password" placeholder="Confrim your Password"
                                         class="ml-[10px] font-regular" name="repassword" id="repassword" required="true"
                                         alike="true">
-                                    <p id="errorRePassword" style="color: red"></p>
+
                                 </div>
+                                <p id="errorRePassword" style="color: red"></p>
                             </div>
 
-                            <div class="border-b-2 border-[#000842] mt-3">
+                            <div class="border-b-2 border-[#000842] mt-3 divDob">
                                 <label for="" class="font-medium text-[13px]">Date of birth</label>
-                                <div class="flex flex-row mb-[7px] divDob">
+                                <div class="flex flex-row mb-[7px] ">
                                     <input type="date" class="font-regular" name="dOB" id="dOB" option='true'
                                         lessNow='true'>
-                                    <p id="errorDob" style="color: red"></p>
+
                                 </div>
+                                <p id="errorDob" style="color: red"></p>
                             </div>
 
                             <div>
@@ -250,7 +256,7 @@
                         error = 'Vui lòng nhập trường này';
                         break;
                     }
-                    if(listErrorType.includes('alike') && value !== passwordEle.value){
+                    if (listErrorType.includes('alike') && value !== passwordEle.value) {
                         error = 'Vui lòng nhập lai dung mat khau';
                         break;
                     }
@@ -311,7 +317,7 @@
             dob: null,
             sex: null,
             password: null,
-            repassword:null,
+            repassword: null,
             email: null,
         };
 
@@ -320,7 +326,7 @@
             dob: null,
             sex: null,
             password: null,
-            repassword:null,
+            repassword: null,
             email: null,
         };
 
@@ -404,9 +410,9 @@
 
 
             const errorList = {
-                
+
                 required: rePasswordEle.getAttribute("required"),
-                alike : rePasswordEle.getAttribute('alike')
+                alike: rePasswordEle.getAttribute('alike')
             };
             // check dk
             const error = validate("repassword", value, errorList);
